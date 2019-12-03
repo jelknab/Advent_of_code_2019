@@ -13,7 +13,7 @@ def find_least_steps(intersections):
     return min(intersections, key = lambda item:item[3])
 
 
-def find_intersection(a, b):
+def find_intersections(a, b):
     intersections = []
 
     for y in a.keys():
@@ -85,5 +85,5 @@ if __name__ == '__main__':
     wire_1 = directions_to_grid(directions_line_to_array(input_lines[0]))
     wire_2 = directions_to_grid(directions_line_to_array(input_lines[1]))
 
-    print("closest intersection", find_closest_intersection(find_intersection(wire_1, wire_2))[2])
-    print("least steps", find_least_steps(find_intersection(wire_1, wire_2))[3])
+    print("closest intersection", find_closest_intersection(find_intersections(wire_1, wire_2))[2])
+    print("least steps", find_least_steps(find_intersections(wire_1, wire_2))[3])
