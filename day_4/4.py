@@ -5,10 +5,8 @@ repeating_matcher = re.compile(r'(\d)\1*')
 
 
 def contains_repeating_digit(input: str) -> bool:
-    matches = [match.group() for match in repeating_matcher.finditer(input)]
-
-    for match in matches:
-        if len(match) == 2:
+    for match in repeating_matcher.finditer(input):
+        if len(match.group()) == 2:
             return True
 
     return False
